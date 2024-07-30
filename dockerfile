@@ -1,20 +1,20 @@
-#Use the official node.js image
+# Use the official Node.js image
 FROM node:18.15.0
 
-#Set the working directory
+# Create and set the working directory
 WORKDIR /app
 
-# Copy package.json and package-lock.json to the working directory
+# Copy package.json and package-lock.json
 COPY package*.json ./
 
-# Install the dependencies
+# Install dependencies
 RUN npm install
 
-# Copy the remaining files to the working directory
+# Copy the rest of the application code
 COPY . .
 
-# Expose the port the app runs on
+# Expose the application port
 EXPOSE 3000
 
-# Serve the app
-CMD ["npm", "index.js"]
+# Define the command to run the application
+CMD ["node", "index.js"]
