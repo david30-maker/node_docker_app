@@ -21,3 +21,7 @@ app.get('/products/:id', (req, res) => {
     res.json(product);
 });
 
+app.listen(PORT, () => {
+    console.log(`Server is running at http://localhost:${PORT}`);
+});
+
